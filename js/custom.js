@@ -24,8 +24,9 @@
         event.preventDefault();
       });
     });    
+    /* ------------------------------- VIDEO MODAL ------------------------------ */
+    $(".js-modal-btn").modalVideo();
   });
 
 
-    
 
