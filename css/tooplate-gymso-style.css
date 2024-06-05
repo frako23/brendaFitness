@@ -619,6 +619,9 @@ https://www.tooplate.com/view/2119-gymso-fitness
     color: var(--primary-color);
   }
 
+  .card2{
+    margin-top: 18rem;
+  }
 
   /*---------------------------------------
      RESPONSIVE STYLES              
@@ -650,6 +653,9 @@ https://www.tooplate.com/view/2119-gymso-fitness
     .modal-content {
       padding: 2rem;
     }
+    .card2{
+      margin-top: 0px;
+    }
   }
 
   @media screen and (max-width: 767px) {
@@ -666,4 +672,5 @@ https://www.tooplate.com/view/2119-gymso-fitness
     .contact h2 span {
       display: block;
     }
+    
   }
