@@ -29,27 +29,25 @@
 <link rel="stylesheet" href="css/tooplate-gymso-style.css?v=1.1">
 <link rel="stylesheet" type="text/css" href="css/modal-video.min.css?v=1.1">
 
-  <style>
-  @media (max-width: 767px) {
+/* Aplicar solo en pantallas de 767px de ancho o menos */
+      @media (max-width: 767px) {
+        
+        /* Redefinimos las variables globales de la plantilla para móviles */
+        :root {
+          --h1-font-size: 40px;  /* Original: 48px. 40px es 2.5rem */
+          --h6-font-size: 16px;  /* Original: 22px. 16px es 1rem */
+        }
 
-    /* Usamos el selector EXACTO que le está ganando */
-    section.hero .hero-text h1 {
-      font-size: 2.8rem !important; 
-      line-height: 1.3 !important; 
-    }
+        /* Los botones no usan una variable de tamaño de fuente
+           en el :root, así que los ajustamos directamente.
+        */
+        .hero-text .btn {
+          font-size: 1rem; /* 16px */
+          padding: 12px 20px;
+        }
 
-    /* (Probablemente tengas que hacer lo mismo para h6 y .btn) */
-    section.hero .hero-text h6 {
-      font-size: 1rem !important; 
-      margin-bottom: 1.5rem !important;
-    }
-
-    section.hero .hero-text .btn {
-      font-size: 1rem !important;
-      padding: 12px 20px !important;
-    }
-  }
-</style>
+      }
+    </style>
 </head>
     
 </head>
