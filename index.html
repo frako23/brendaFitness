@@ -33,26 +33,28 @@
     <!-- ----------------------------- VIDEO MODAL ----------------------------- -->
     <link rel="stylesheet" type="text/css" href="css/modal-video.min.css">
 
-    <style>
-      /* Asegúrate de que esto esté justo antes de </head> */
-      @media (max-width: 767px) {
-        
-        .hero-text h1 {
-          font-size: 2.8rem !important; /* Usamos !important para forzar el estilo */
-          line-height: 1.3 !important; 
-        }
+  <style>
+  @media (max-width: 767px) {
 
-        .hero-text h6 {
-          font-size: 1rem !important; 
-          margin-bottom: 1.5rem !important;
-        }
+    /* Usamos el selector EXACTO que le está ganando */
+    section.hero .hero-text h1 {
+      font-size: 2.8rem !important; 
+      line-height: 1.3 !important; 
+    }
 
-        .hero-text .btn {
-          font-size: 1rem !important;
-          padding: 12px 20px !important;
-        }
-      }
-    </style>
+    /* (Probablemente tengas que hacer lo mismo para h6 y .btn) */
+    section.hero .hero-text h6 {
+      font-size: 1rem !important; 
+      margin-bottom: 1.5rem !important;
+    }
+
+    section.hero .hero-text .btn {
+      font-size: 1rem !important;
+      padding: 12px 20px !important;
+    }
+  }
+</style>
+</head>
     
 </head>
 
