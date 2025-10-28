@@ -647,46 +647,7 @@ button#submit-button:hover {
   .card2 {
     margin-top: 0px;
   }
+
+  
 }
 
-@media screen and (max-width: 767px) {
-  /* --- INICIO: Arreglos para el Hero en móvil --- */
-
-  .hero-text h1 {
-    /* Le ganamos al 'h1 { font-size: 38px; }' de la plantilla */
-    font-size: 2.5rem; /* 40px */
-    line-height: 1.3;
-  }
-
-  .hero-text h6 {
-    font-size: 1rem; /* 16px */
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-text .btn {
-    /* Sobrescribimos el --menu-font-size de 14px */
-    font-size: 1rem; /* 16px */
-    padding: 12px 20px;
-    display: block; /* Los apilamos verticalmente */
-  }
-
-  /* Añadir espacio entre los botones apilados */
-  .hero-text .btn + .btn {
-    margin-top: 15px;
-  }
-
-  /* --- FIN: Arreglos para el Hero en móvil --- */
-
-  h1 {
-    font-size: 38px;
-  }
-
-  .about-working-hours {
-    border-left: 0;
-    padding: 22px 0 0 0;
-  }
-
-  .contact h2 span {
-    display: block;
-  }
-}
