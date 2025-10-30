@@ -359,14 +359,63 @@ a:focus {
      HERO              
   -----------------------------------------*/
 
+/* 1. El Contenedor Padre */
 .hero {
-  background-image: url("../images/hero-new.avif");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  vertical-align: middle;
-  min-height: 100vh;
+  /* Propiedades clave de tu diseño original */
+  min-height: 100vh; /* <-- Esta es la regla clave que fija la altura */
+
+  /* Clases de Bootstrap (d-flex, etc.) se encargan del centrado */
+
+  /* Propiedades que añadimos para el video */
   position: relative;
+  overflow: hidden;
+}
+
+/* 2. El Video (Capa de Fondo: z-index 1) */
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* La capa más baja */
+  overflow: hidden;
+}
+
+.hero-video-wrapper iframe {
+  /* Truco para que el video cubra el 100% (como 'background-size: cover') */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Ajuste para pantallas anchas (proporción 16:9) */
+  width: 177.77vh; /* 100vh * (16/9) */
+  height: 56.25vw; /* 100vw * (9/16) */
+}
+
+/* 3. El Overlay (Capa Intermedia: z-index 2) */
+.bg-overlay {
+  /* Asumo que ya tenías un 'background-color' (ej. rgba(0,0,0,0.5))
+     Asegúrate de que también esté posicionado absolutamente. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Encima del video */
+
+  /* Ejemplo (si no lo tenías): */
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+/* 4. El Contenido (Capa Superior: z-index 3) */
+.container {
+  /* Lo ponemos por encima de todo */
+  position: relative; /* O 'static', pero 'relative' es más seguro */
+  z-index: 3; /* Encima del overlay */
 }
 
 /*---------------------------------------
@@ -647,7 +696,4 @@ button#submit-button:hover {
   .card2 {
     margin-top: 0px;
   }
-
-  
 }
-
