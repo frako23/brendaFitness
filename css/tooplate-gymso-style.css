@@ -563,6 +563,109 @@ a:focus {
   display: block;
 }
 
+/* 1. EL CONTENEDOR PADRE (.team-thumb)
+  Lo convertimos en el punto de referencia para el overlay.
+*/
+.team-thumb {
+  position: relative; /* Clave para que .team-info (hijo) se posicione sobre él */
+  overflow: hidden; /* Oculta el overlay cuando se sale (para la animación) */
+
+  /* Opcional: unifica la altura de las tarjetas si las fotos son distintas */
+  aspect-ratio: 4 / 5;
+
+  /* Opcional: un toque estético */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. LA IMAGEN
+  Forzamos que la imagen llene el contenedor (gracias al aspect-ratio)
+*/
+.team-thumb .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se deforme, la recorta */
+  transition: transform 0.4s ease; /* Para un leve efecto de zoom al pasar el ratón */
+}
+
+/* 3. EL OVERLAY DE INFORMACIÓN (.team-info)
+  Aquí está la magia. Lo sacamos del flujo y lo ponemos encima.
+*/
+.team-thumb .team-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  /* Usamos 'height: 100%' y ajustamos flex para centrar verticalmente */
+  height: 100%;
+  justify-content: flex-end; /* Alinea el contenido (h3, span, ul) abajo */
+  padding: 1.5rem 1.25rem;
+
+  /* Fondo degradado para legibilidad */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  /* Animación de entrada */
+  opacity: 0; /* Oculto por defecto */
+  transform: translateY(20px); /* Ligeramente desplazado hacia abajo */
+  transition: all 0.4s ease-in-out;
+}
+
+/* 4. EL EFECTO HOVER
+  Cuando pasamos el ratón sobre el padre (.team-thumb)...
+*/
+.team-thumb:hover .team-info {
+  opacity: 1; /* Hacemos visible el overlay */
+  transform: translateY(0); /* Lo devolvemos a su posición original */
+}
+
+.team-thumb:hover .img-fluid {
+  transform: scale(1.05); /* ...hacemos un ligero zoom a la imagen */
+}
+
+/* 5. ESTILOS DEL TEXTO
+  Aseguramos que el texto sea legible sobre el overlay.
+*/
+.team-thumb .team-info h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.team-thumb .team-info span {
+  color: #e0e0e0; /* Un blanco menos intenso */
+  font-size: 0.9rem;
+}
+
+/* 6. ICONOS SOCIALES
+  Ajustamos los iconos para el overlay.
+*/
+.team-thumb .social-icon {
+  margin-top: 1rem !important; /* Sobrescribe tu 'mt-3' para más control */
+}
+
+.team-thumb .social-icon li a {
+  color: #ffffff;
+  font-size: 1.1rem;
+  /* Opcional: fondo para hacerlos resaltar */
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* border-radius: 50%; */
+  /* width: 30px; */
+  /* height: 30px; */
+  /* line-height: 30px; */
+  /* text-align: center; */
+}
+
+.team-thumb .social-icon li a:hover {
+  color: #f0f0f0; /* O el color de tu marca */
+}
+
 /*---------------------------------------
      CONTACT              
   -----------------------------------------*/
@@ -660,9 +763,9 @@ button#submit-button:hover {
   color: var(--primary-color);
 }
 
-.card2 {
+/* .card2 {
   margin-top: 18rem;
-}
+} */
 
 /*---------------------------------------
      RESPONSIVE STYLES              
@@ -695,5 +798,19 @@ button#submit-button:hover {
   }
   .card2 {
     margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #picture {
+    max-width: 50%;
+    flex: 0 0 50%;
+    display: flex;
+  }
+
+  #picture2 {
+    max-width: 30%;
+    flex: 0 0 30%;
+    display: flex;
   }
 }
