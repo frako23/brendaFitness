@@ -40,7 +40,7 @@
 <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
 
     <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+   <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
 
             <a class="navbar-brand" href="index.html">Brenda Fitness</a>
@@ -61,11 +61,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#class" class="nav-link smoothScroll">Classes</a>
+                        <a href="#training" class="nav-link smoothScroll">Personal Training</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#schedule" class="nav-link smoothScroll">Schedules</a>
+                        <a href="#portfolio" class="nav-link smoothScroll">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#competitions" class="nav-link smoothScroll">Competitions</a>
                     </li>
 
                     <li class="nav-item">
@@ -74,7 +78,6 @@
                 </ul>
 
                 <ul class="social-icon ml-lg-3">
-                    <!-- <li><a href="https://fb.com/tooplate" class="fa fa-facebook"></a></li> -->
                     <li><a href="https://www.youtube.com/@brennokie" class="fa fa-youtube-play" target="_blank"></a>
                     </li>
                     <li><a href="https://www.instagram.com/brennokie/" class="fa fa-instagram" target="_blank"></a></li>
@@ -665,42 +668,34 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel"
+<div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
 
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
+                    <h2 class="modal-title" id="membershipFormLabel">Book Your Consultation</h2>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
 
                 <div class="modal-body">
                     <form class="membership-form webform" role="form">
-                        <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
+                        <input type="text" class="form-control" name="cf-name" placeholder="Your Name">
 
-                        <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+                        <input type="email" class="form-control" name="cf-email" placeholder="Your Email">
 
-                        <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890"
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        <input type="tel" class="form-control" name="cf-phone" placeholder="Your Phone (Optional)">
 
                         <textarea class="form-control" rows="3" name="cf-message"
-                            placeholder="Additional Message"></textarea>
+                            placeholder="Tell me a little about your fitness goals!"></textarea>
 
-                        <button type="submit" class="form-control" id="submit-button" name="submit">Submit
-                            Button</button>
+                        <button type="submit" class="form-control" id="submit-button" name="submit">Send Request</button>
 
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="signup-agree">
-                            <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the
-                                <a href="#">Terms &amp;Conditions</a>
-                            </label>
-                        </div>
-                    </form>
+                        </form>
                 </div>
 
                 <div class="modal-footer"></div>
