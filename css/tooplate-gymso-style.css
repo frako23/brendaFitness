@@ -767,6 +767,131 @@ button#submit-button:hover {
   margin-top: 18rem;
 } */
 
+/* ---------------------------------------
+   VIDEO CARD DESIGN (MEJORA)
+------------------------------------------*/
+
+/* El contenedor principal de la tarjeta */
+.video-card {
+  position: relative; /* Clave para superponer elementos */
+  border-radius: 12px; /* Esquinas redondeadas */
+  overflow: hidden; /* Asegura que la imagen no se salga de las esquinas */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  transition: all 0.3s ease;
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Al pasar el ratón, la tarjeta se levanta un poco */
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor de la imagen (para el icono de play) */
+.video-image-container {
+  position: relative;
+  width: 100%;
+  /* Mantiene la proporción 16:9 para las miniaturas de YouTube */
+  padding-top: 56.25%; /* 9 / 16 = 0.5625 */
+  background-color: #333; /* Color de fondo mientras carga la imagen */
+}
+
+/* La imagen de la tarjeta */
+.video-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  transition: opacity 0.3s ease;
+}
+
+/* Icono de Play (se muestra al pasar el ratón) */
+.video-image-container::after {
+  content: "\25BA"; /* Código para el símbolo de "Play" ► */
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* Evita que el icono bloquee el clic en el botón */
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.video-card:hover .video-image-container::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.video-card:hover img {
+  opacity: 0.8; /* Oscurece la imagen ligeramente */
+}
+
+/* La caja de información */
+.video-info {
+  /* position: absolute; */ /* Lo quitamos para que el flex-direction funcione */
+  /* bottom: 0; */
+  width: 100%;
+  padding: 20px;
+  background: #ffffff; /* Fondo blanco para la info */
+  color: #333;
+  /* Crecimiento flexible para alinear botones al fondo */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-info h3 {
+  font-size: 1.25rem; /* Tamaño de título */
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+  /* Limita el texto a 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5rem; /* Espacio para 2 líneas */
+}
+
+/* Categoría (Music Video, Performance, etc.) */
+.video-info .category {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+/* Artista o descripción */
+.video-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+  /* Limita a 3 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* El botón se alinea al fondo gracias a 'margin-top: auto' */
+.video-info .btn {
+  width: 100%;
+  padding: 10px 15px;
+  font-weight: 600;
+  margin-top: auto; /* ¡Magia! Empuja el botón al fondo de la tarjeta */
+}
+
 /*---------------------------------------
      RESPONSIVE STYLES              
   -----------------------------------------*/
