@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario para Clientes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Incluye tus estilos CSS y AOS si los usas -->
+    <!-- Meta Tags Generated via https://opengraph.dev -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css?v=1.1" />
+    <!-- <link rel="stylesheet" href="../css/font-awesome.min.css?v=1.1" /> -->
+    <!-- <link rel="stylesheet" href="../css/aos.css?v=1.1" /> -->
+    <link rel="stylesheet" href="../css/tooplate-gymso-style.css?v=1.1" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="text-center my-4">
+        🧾 FORMULARIO PARA CLIENTES / CLIENT FORM
+      </h2>
+
+      <form
+        id="client-form"
+        action="https://formspree.io/f/xeovjodo"
+        method="POST"
+        class="webform"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        role="form"
+      >
+        <!-- Información personal -->
+        <h4>Información personal / Personal Information</h4>
+        <input
+          type="text"
+          name="full_name"
+          class="form-control"
+          placeholder="Nombre completo / Full name"
+          required
+        />
+        <input
+          type="number"
+          name="age"
+          class="form-control"
+          placeholder="Edad / Age"
+          required
+        />
+        <input
+          type="text"
+          name="gender"
+          class="form-control"
+          placeholder="Género / Gender"
+          required
+        />
+        <input
+          type="text"
+          name="height"
+          class="form-control"
+          placeholder="Altura / Height"
+          required
+        />
+        <input
+          type="text"
+          name="weight"
+          class="form-control"
+          placeholder="Peso actual / Current weight"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Correo electrónico / Email"
+          required
+        />
+        <input
+          type="text"
+          name="location"
+          class="form-control"
+          placeholder="País y ciudad / Country & City"
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          class="form-control"
+          placeholder="Teléfono (opcional) / Phone (optional)"
+        />
+
+        <hr />
+
+        <!-- Objetivos -->
+        <h4>Objetivos / Goals</h4>
+        <label
+          ><input type="radio" name="main_goal" value="Fat loss" /> Pérdida de
+          grasa / Fat loss</label
+        ><br />
+        <label
+          ><input type="radio" name="main_goal" value="Muscle gain" /> Ganar
+          músculo / Muscle gain</label
+        ><br />
+        <label
+          ><input type="radio" name="main_goal" value="Toning" /> Tonificar /
+          Toning</label
+        ><br />
+        <label
+          ><input type="radio" name="main_goal" value="Performance" /> Mejorar
+          rendimiento / Improve performance</label
+        ><br />
+        <label
+          ><input type="radio" name="main_goal" value="Other" /> Otro /
+          Other:</label
+        >
+        <input
+          type="text"
+          name="goal_other"
+          class="form-control"
+          placeholder="Especifica / Specify"
+        />
+
+        <textarea
+          name="goal_description"
+          class="form-control"
+          rows="3"
+          placeholder="Describe brevemente qué te gustaría lograr en los próximos 3 meses"
+        ></textarea>
+
+        <hr />
+
+        <!-- Experiencia -->
+        <h4>Experiencia y entrenamiento actual / Training Background</h4>
+        <label
+          ><input type="radio" name="gym_experience" value="Yes" /> Sí /
+          Yes</label
+        >
+        <label
+          ><input type="radio" name="gym_experience" value="No" /> No /
+          No</label
+        ><br />
+
+        <label>Días de entrenamiento por semana:</label><br />
+        <label
+          ><input type="radio" name="training_days" value="0-1" /> 0–1</label
+        >
+        <label
+          ><input type="radio" name="training_days" value="2-3" /> 2–3</label
+        >
+        <label
+          ><input type="radio" name="training_days" value="4-5" /> 4–5</label
+        >
+        <label
+          ><input type="radio" name="training_days" value="6-7" /> 6–7</label
+        ><br />
+
+        <textarea
+          name="current_workouts"
+          class="form-control"
+          rows="2"
+          placeholder="¿Qué tipo de ejercicios haces actualmente?"
+        ></textarea>
+
+        <label>Tipo de entrenamiento preferido:</label><br />
+        <label
+          ><input type="radio" name="training_type" value="Gym" /> Gimnasio /
+          Gym</label
+        >
+        <label
+          ><input type="radio" name="training_type" value="Home" /> En casa /
+          Home workouts</label
+        >
+        <label
+          ><input type="radio" name="training_type" value="Both" /> Ambos /
+          Both</label
+        >
+
+        <hr />
+
+        <!-- Salud -->
+        <h4>Salud y lesiones / Health & Injuries</h4>
+        <label><input type="radio" name="injury" value="Yes" /> Sí / Yes</label>
+        <input
+          type="text"
+          name="injury_description"
+          class="form-control"
+          placeholder="Describe la lesión / Describe the injury"
+        />
+        <label><input type="radio" name="injury" value="No" /> No / No</label
+        ><br />
+
+        <label
+          ><input type="radio" name="medication" value="Yes" /> Sí / Yes</label
+        >
+        <input
+          type="text"
+          name="medication_description"
+          class="form-control"
+          placeholder="¿Cuál? / Which one?"
+        />
+        <label
+          ><input type="radio" name="medication" value="No" /> No / No</label
+        ><br />
+
+        <textarea
+          name="physical_limitation"
+          class="form-control"
+          rows="2"
+          placeholder="¿Tienes alguna restricción física o limitación de movimiento?"
+        ></textarea>
+
+        <hr />
+
+        <!-- Alimentación -->
+        <h4>Alimentación / Nutrition</h4>
+        <label
+          ><input type="radio" name="nutrition" value="Very healthy" /> Muy
+          saludable / Very healthy</label
+        >
+        <label
+          ><input type="radio" name="nutrition" value="Average" /> Regular /
+          Average</label
+        >
+        <label
+          ><input type="radio" name="nutrition" value="Unhealthy" /> Poco
+          saludable / Unhealthy</label
+        ><br />
+
+        <textarea
+          name="food_restrictions"
+          class="form-control"
+          rows="2"
+          placeholder="¿Tienes alergias o restricciones alimentarias?"
+        ></textarea>
+
+        <label
+          ><input type="radio" name="supplements" value="Yes" /> Sí / Yes</label
+        >
+        <input
+          type="text"
+          name="supplements_description"
+          class="form-control"
+          placeholder="¿Cuáles? / Which ones?"
+        />
+        <label
+          ><input type="radio" name="supplements" value="No" /> No / No</label
+        >
+
+        <hr />
+
+        <!-- Estilo de vida -->
+        <h4>Estilo de vida / Lifestyle</h4>
+        <input
+          type="text"
+          name="occupation"
+          class="form-control"
+          placeholder="Ocupación / Occupation"
+        />
+
+        <label>Nivel de actividad diaria:</label><br />
+        <label
+          ><input type="radio" name="daily_activity" value="Sedentary" />
+          Sedentario / Sedentary</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="daily_activity"
+            value="Moderately active"
+          />
+          Moderadamente activo / Moderately active</label
+        >
+        <label
+          ><input type="radio" name="daily_activity" value="Very active" /> Muy
+          activo / Very active</label
+        ><br />
+
+        <label>Horas de sueño:</label><br />
+        <label
+          ><input type="radio" name="sleep_hours" value="Less than 6" /> Menos
+          de 6</label
+        >
+        <label><input type="radio" name="sleep_hours" value="6-7" /> 6–7</label>
+        <label
+          ><input type="radio" name="sleep_hours" value="8 or more" /> 8 o
+          más</label
+        ><br />
+
+        <label>Nivel de estrés:</label><br />
+        <label
+          ><input type="radio" name="stress_level" value="Low" /> Bajo /
+          Low</label
+        >
+        <label
+          ><input type="radio" name="stress_level" value="Medium" /> Medio /
+          Medium</label
+        >
+        <label
+          ><input type="radio" name="stress_level" value="High" /> Alto /
+          High</label
+        >
+
+        <hr />
+
+        <!-- Disponibilidad -->
+        <h4>Disponibilidad y preferencia / Schedule & Preferences</h4>
+        <label
+          ><input type="radio" name="training_commitment" value="2-3" />
+          2–3</label
+        >
+        <label
+          ><input type="radio" name="training_commitment" value="4-5" />
+          4–5</label
+        >
+        <label
+          ><input type="radio" name="training_commitment" value="6-7" />
+          6–7</label
+        ><br />
+
+        <label
+          ><input type="radio" name="training_access" value="Gym" /> Gimnasio /
+          Gym</label
+        >
+        <label
+          ><input type="radio" name="training_access" value="Home" /> Casa /
+          Home</label
+        >
+        <label
+          ><input type="radio" name="training_access" value="Both" /> Ambos /
+          Both</label
+        ><br />
+
+        <label>Horario preferido:</label><br />
+        <label
+          ><input type="radio" name="training_time" value="Morning" /> Mañana /
+          Morning</label
+        >
+        <label
+          ><input type="radio" name="training_time" value="Afternoon" />
+          Tarde</label
+        >
+      </form>
+    </div>
+  </body>
+</html>
